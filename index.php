@@ -1,0 +1,2326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="images/impactworks.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NagartaYouth | Empowering Communities Through Skills Development</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ===== LEADERSHIP CARDS – SMART & ELEGANT ===== */
+
+.leader-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 28px 24px 32px;
+    height: 100%;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.leader-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(34,139,34,0.08), transparent);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.leader-card:hover::before {
+    opacity: 1;
+}
+
+.leader-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* Image */
+.leader-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.leader-profile {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #e9f5ec;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    background: #fff;
+}
+
+/* Content */
+.leader-content {
+    text-align: center;
+}
+
+.leader-content h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1f2933;
+}
+
+.leader-role {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1b5e20;
+    background: #e8f5e9;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+/* Quote */
+.leader-quote {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    position: relative;
+    padding-top: 12px;
+}
+
+.leader-quote::before {
+    content: "“";
+    font-size: 3rem;
+    color: #d0e8d4;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: serif;
+}
+
+/* Section polish */
+#leadership {
+    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+/* View All Button */
+.btn-view-all {
+    padding: 12px 30px;
+    border-radius: 999px;
+    font-weight: 500;
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-view-all:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(34, 139, 34, 0.35);
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+}
+
+
+        .more-leaders {
+    display: none;
+}
+
+        :root {
+            --primary-green: #006400; /* Dark Green */
+            --secondary-green: #228B22; /* Forest Green */
+            --accent-gold: #D4AF37; /* Gold */
+            --light-green: #90EE90; /* Light Green */
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --dark: #1A1A1A;
+            --gradient-green: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--accent-gold) 0%, #FFD700 100%);
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--white);
+            overflow-x: hidden;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3, h4, h5, .display-1, .display-2, .display-3, .display-4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+        
+        /* Green-White-Green Banner Effect */
+        .green-banner {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .green-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 33.33%;
+            height: 100%;
+            background: var(--primary-green);
+            z-index: -1;
+        }
+        
+        .green-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 33.33%;
+            height: 100%;
+            background: var(--secondary-green);
+            z-index: -1;
+        }
+        
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98) !important;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0, 100, 0, 0.1);
+        }
+        
+        .navbar-scrolled {
+            box-shadow: 0 5px 20px rgba(0, 100, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary-green) !important;
+        }
+        
+        .navbar-brand span {
+            color: var(--accent-gold);
+        }
+        
+        .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-green) !important;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-gold) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            background: var(--gradient-green);
+            color: var(--white);
+            padding: 200px 0 150px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            opacity: 0.1;
+        }
+        
+        /* Elegant Hero Title Styling */
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: inline-block;
+            padding: 0 20px;
+
+
+        }
+        
+        .hero-title-main {
+            color: var(--white);
+            display: block;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero-title-accent {
+            color: var(--accent-gold);
+            display: block;
+            position: relative;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+        }
+        
+        .hero-title-accent::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-green);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 100, 0, 0.3);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-accent {
+            background: var(--gradient-gold);
+            border: 2px solid var(--accent-gold);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            color: var(--dark);
+        }
+        
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            color: var(--dark);
+            background: var(--white);
+        }
+        
+        .btn-donate {
+            background: var(--gradient-gold);
+            border: 2px solid var(--accent-gold);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            color: var(--dark);
+        }
+        
+        .btn-donate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            background: var(--white);
+            color: var(--primary-green);
+        }
+        
+        .btn-view-all {
+            background: var(--gradient-green);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            color: var(--white);
+            margin: 1.5rem auto;
+            display: block;
+            width: 200px;
+        }
+        
+        .btn-view-all:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 100, 0, 0.3);
+            color: var(--white);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gold);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+            color: var(--secondary-green);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+        }
+        
+        /* Stats Section - No Background */
+        .stats-section {
+            background: transparent;
+            color: var(--dark);
+            padding: 80px 0;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 100, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 100, 0, 0.05);
+            height: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 100, 0, 0.1);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        /* Our Story Landscape Section */
+        .story-landscape {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.95) 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .story-landscape::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-green) 0%, var(--white) 50%, var(--secondary-green) 100%);
+        }
+        
+        .story-content {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 4rem;
+            box-shadow: 0 20px 60px rgba(0, 100, 0, 0.1);
+            position: relative;
+            border: 1px solid rgba(0, 100, 0, 0.1);
+        }
+        
+        .story-icon {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -80px auto 2rem;
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .story-icon i {
+            font-size: 3rem;
+            color: var(--white);
+        }
+        
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+        
+        .story-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .story-signature {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 100, 0, 0.1);
+            margin-top: 2rem;
+        }
+        
+        .story-signature::before {
+            content: "— ";
+        }
+        
+        /* Service/Program Cards */
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 100, 0, 0.08);
+            height: 100%;
+            border: 1px solid rgba(0, 100, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-green);
+            transition: width 0.3s ease;
+        }
+        
+        .service-card:hover::before {
+            width: 10px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 100, 0, 0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: var(--white);
+            font-size: 2rem;
+        }
+        
+        .service-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Leadership Cards - Circular Images */
+        .leader-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 100, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .leader-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 100, 0, 0.15);
+        }
+        
+        .leader-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+            margin: 0 auto 1.5rem;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 20px rgba(0, 100, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .leader-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .leader-content h4 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .leader-role {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .leader-quote {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            position: relative;
+            padding: 0 0.5rem;
+        }
+        
+        .leader-quote::before {
+            content: '"';
+            position: absolute;
+            left: -5px;
+            top: -10px;
+            font-size: 2rem;
+            color: var(--light-green);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Board of Trustees Section */
+        .trustees-section {
+            background: var(--light-gray);
+            padding: 80px 0 40px;
+        }
+        
+        .trustee-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 100, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .trustee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 100, 0, 0.15);
+        }
+        
+        .trustee-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3.5rem;
+            margin: 0 auto 1.5rem;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 20px rgba(0, 100, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .trustee-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .trustee-content h4 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .trustee-role {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-size: 0.9rem;
+        }
+        
+        .trustee-organization {
+            color: var(--secondary-green);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .trustee-bio {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Hidden leaders/trustees */
+        .more-leaders,
+        .more-trustees {
+            display: none;
+        }
+        
+        .more-leaders.show,
+        .more-trustees.show {
+            display: block;
+        }
+        
+        /* View All Button Container */
+        .view-all-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            height: 300px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 100, 0, 0.9), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            color: var(--white);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .gallery-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Contact Section - Reduced spacing */
+        .contact-section {
+            background: var(--white);
+            padding: 60px 0 80px;
+        }
+        
+        .contact-buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo span {
+            color: var(--accent-gold);
+        }
+        
+        .footer-about {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+        
+        .footer-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .footer-links a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 12px;
+            color: var(--accent-gold);
+            margin-top: 5px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        #backToTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: none;
+            background: var(--gradient-gold);
+            color: var(--dark);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        #backToTopBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Modal Styling */
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            background: var(--gradient-green);
+            color: var(--white);
+            border-bottom: none;
+            padding: 1.5rem 2rem;
+        }
+        
+        .modal-header .btn-close {
+            filter: invert(1);
+        }
+        
+        /* Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 150px 0 100px;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .story-content {
+                padding: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .leader-img, .trustee-img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .service-card, .leader-card, .trustee-card {
+                margin-bottom: 2rem;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 120px 0 80px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+                padding: 0 15px;
+            }
+            
+            .hero-title-accent::after {
+                width: 80px;
+                bottom: -8px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn-primary, .btn-accent, .btn-donate, .btn-view-all {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .story-icon {
+                width: 80px;
+                height: 80px;
+                margin: -40px auto 1.5rem;
+            }
+            
+            .story-icon i {
+                font-size: 2rem;
+            }
+            
+            .leader-img, .trustee-img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .gallery-item {
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+        
+        .leader-profile,
+        .trustee-profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 15px auto;
+            display: block;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* For leader images */
+        .leader-img {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .leader-profile {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* For trustee images */
+        .trustee-img {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .trustee-profile {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Remove the old icon styles if they exist */
+        .leader-img i,
+        .trustee-img i {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+   <!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top py-3">
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            Nagarta<span>Youth</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-nowrap" href="#story">Our Story</a></li>
+                <li class="nav-item"><a class="nav-link text-nowrap" href="#mission">Mission &amp; Vision</a></li>
+                <li class="nav-item"><a class="nav-link" href="#programmes">Programmes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#leadership">Leadership</a></li>
+                <li class="nav-item"><a class="nav-link" href="#trustees">Trustees</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                <!-- Donate Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#donate" class="btn btn-donate text-nowrap">
+                        <i class="fas fa-heart me-2"></i> Donate Now
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <h1 class="hero-title animate-on-scroll">
+                        <span class="hero-title-main">Empowering Communities Through</span>
+                        <span class="hero-title-accent">Sustainable Skills</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle animate-on-scroll" style="transition-delay: 0.2s">
+                        We are dedicated to transforming lives through vocational training, digital literacy, and entrepreneurship programs that create sustainable livelihoods and drive economic growth in underserved communities.
+                    </p>
+                    
+                    <div class="hero-buttons animate-on-scroll" style="transition-delay: 0.4s">
+                        <a href="#programmes" class="btn btn-primary"><i class="fas fa-graduation-cap me-2"></i>Explore Our Programs</a>
+                        <a href="#" class="btn btn-accent" id="heroDonateBtn"><i class="fas fa-heart me-2"></i>Support Our Mission</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section - No Background -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+                        <div class="stat-number">2,000+</div>
+                        <div class="stat-label">Individuals Trained</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card animate-on-scroll" style="transition-delay: 0.1s">
+                        <div class="stat-icon"><i class="fas fa-globe-africa"></i></div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Local Government Served</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card animate-on-scroll" style="transition-delay: 0.2s">
+                        <div class="stat-icon"><i class="fas fa-business-time"></i></div>
+                        <div class="stat-number">75%</div>
+                        <div class="stat-label">Employment Rate</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card animate-on-scroll" style="transition-delay: 0.3s">
+                        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Partners Worldwide</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Landscape Section -->
+    <section id="story" class="story-landscape">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="animate-on-scroll">Our Story</h2>
+                <div class="section-subtitle animate-on-scroll" style="transition-delay: 0.2s">Transforming Lives Since 2012</div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="story-content animate-on-scroll">
+                        <div class="story-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="story-text">
+                            <p>Founded in 2012, NagartaYouth Community Development Initiatives is a non-profit organization dedicated to transforming lives through sustainable skills development. We believe that empowering individuals with practical vocational training, digital literacy, and entrepreneurial capabilities is the most effective pathway to economic independence and community development.</p>
+                            
+                            <p>Our organization was born from the recognition that traditional education systems often fail to equip individuals with the practical skills needed to secure sustainable livelihoods. We bridge this gap by providing market-relevant training that aligns with local economic opportunities and global trends.</p>
+                            
+                            <p>Through our network of training centers and community partnerships, we've established a proven model that combines technical skills training with business development support, mentorship, and market linkages to ensure our graduates not only find employment but also create employment opportunities for others.</p>
+                        </div>
+                        
+                        <div class="story-signature">NagartaYouth Foundation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section id="mission" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="animate-on-scroll">Our Foundation</h2>
+                <div class="section-subtitle animate-on-scroll" style="transition-delay: 0.2s">Guiding Principles</div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon" style="background: var(--gradient-green);">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To equip individuals from marginalized communities with practical vocational skills, digital literacy, and entrepreneurial capabilities that foster economic independence and sustainable development. We believe in creating lasting change through education, empowerment, and opportunity.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="service-card animate-on-scroll" style="transition-delay: 0.2s">
+                        <div class="service-icon" style="background: var(--gradient-gold);">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>A world where every individual, regardless of socioeconomic background, has access to quality skills training and the resources needed to build a prosperous future for themselves and their communities. We envision communities transformed through knowledge, innovation, and collaboration.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Core Values -->
+            <div class="row g-4 mt-4">
+                <div class="col-md-3">
+                    <div class="service-card text-center animate-on-scroll" style="transition-delay: 0.1s">
+                        <div class="service-icon mx-auto" style="background: var(--gradient-green);">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Integrity</h4>
+                        <p>We maintain the highest ethical standards in all our operations</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card text-center animate-on-scroll" style="transition-delay: 0.2s">
+                        <div class="service-icon mx-auto" style="background: var(--gradient-green);">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h4>Excellence</h4>
+                        <p>We strive for quality in every program and interaction</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card text-center animate-on-scroll" style="transition-delay: 0.3s">
+                        <div class="service-icon mx-auto" style="background: var(--gradient-green);">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Inclusion</h4>
+                        <p>Equal opportunities for all, regardless of background</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card text-center animate-on-scroll" style="transition-delay: 0.4s">
+                        <div class="service-icon mx-auto" style="background: var(--gradient-green);">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Sustainability</h4>
+                        <p>Creating programs with lasting impact for communities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programmes Section -->
+    <section id="programmes" class="py-5">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="animate-on-scroll">Our Programmes</h2>
+                <div class="section-subtitle animate-on-scroll" style="transition-delay: 0.2s">Comprehensive Skills Development</div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- ICT Program -->
+                <div class="col-md-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #1a5d3a, #2d7a52);">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Digital Skills & ICT</h3>
+                        <p>Comprehensive technology education program designed to equip participants with essential digital literacy and advanced ICT skills for today's job market.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Computer Fundamentals</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Software Development</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Digital Marketing</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Data Analysis</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100 mt-3"><i class="fas fa-info-circle me-2"></i>Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Shoes Making Program -->
+                <div class="col-md-4">
+                    <div class="service-card animate-on-scroll" style="transition-delay: 0.2s">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #2d7a52, #1a5d3a);">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <h3>Shoes Making & Design</h3>
+                        <p>Comprehensive footwear design and production training that combines traditional craftsmanship with modern business skills for sustainable entrepreneurship.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Footwear Design</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Material Selection</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Production Techniques</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Business Management</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100 mt-3"><i class="fas fa-info-circle me-2"></i>Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Bag Making Program -->
+                <div class="col-md-4">
+                    <div class="service-card animate-on-scroll" style="transition-delay: 0.4s">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #2a6e3f, #1a5d3a);">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Bag Making & Leatherwork</h3>
+                        <p>Specialized training in bag design, leather craftsmanship, and accessory production that empowers artisans to create premium products for markets.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Leather Selection</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Bag Design</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Craftsmanship Techniques</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Export Readiness</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100 mt-3"><i class="fas fa-info-circle me-2"></i>Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+<section id="leadership" class="py-5 bg-light">
+    <div class="container">
+
+        <div class="section-title text-center">
+            <h2 class="animate-on-scroll">Our Leadership Team</h2>
+            <div class="section-subtitle animate-on-scroll" style="transition-delay: 0.2s">
+                Dedicated Professionals
+            </div>
+        </div>
+
+        <!-- TOP MANAGEMENT -->
+        <div class="row g-4">
+
+            <!-- Executive Director -->
+            <div class="col-md-4">
+                <div class="leader-card animate-on-scroll">
+                    <div class="leader-img">
+                        <img src="images/chairman.jpeg" class="leader-profile" alt="">
+                    </div>
+                    <div class="leader-content">
+                        <h4>Mr. Anas Aminu</h4>
+                        <span class="leader-role">Executive Director</span>
+                        <p class="leader-quote">
+                            "True empowerment comes from equipping people with skills, confidence, and opportunity."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Manager -->
+            <div class="col-md-4">
+                <div class="leader-card animate-on-scroll" style="transition-delay:.1s">
+                    <div class="leader-img">
+                        <img src="images/mohd1.jpeg" class="leader-profile" alt="">
+                    </div>
+                    <div class="leader-content">
+                        <h4>Mr. Muhammad Shehu Abubakar</h4>
+                        <span class="leader-role">Program Manager</span>
+                        <p class="leader-quote">
+                            "Strong coordination and monitoring ensure every program delivers real impact."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operations Manager -->
+            <div class="col-md-4">
+                <div class="leader-card animate-on-scroll" style="transition-delay:.2s">
+                    <div class="leader-img">
+                        <img src="images/turaki.jpeg" class="leader-profile" alt="">
+                    </div>
+                    <div class="leader-content">
+                        <h4>Mr. Ahmad Yahaya Turaki</h4>
+                        <span class="leader-role">Operations Manager</span>
+                        <p class="leader-quote">
+                            "Efficient systems ensure resources are used wisely for maximum community benefit."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MORE LEADERS -->
+        <div class="more-leaders" id="moreLeaders">
+            <div class="row g-4 mt-4">
+
+                <!-- Skills Acquisition Officer -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/chika.jpeg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Mr. Abubakar sarkin-Kaya</h4>
+                            <span class="leader-role">Skills Acquisition Officer</span>
+                            <p class="leader-quote">
+                                <p class="leader-quote">
+    "My focus is on equipping youths and women with practical, market-relevant skills that foster self-reliance, innovation, and sustainable livelihoods within our communities."
+</p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ICT Program Lead -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/abdulrashid.jpeg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Mr. Abdulrashid Hamza</h4>
+                            <span class="leader-role">ICT Program Lead</span>
+                            <p class="leader-quote">
+                                "Digital skills open doors to innovation, employment, and global opportunities."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocational Training Head -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/gulon.jpeg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Mr. Abdullahi A. Bello</h4>
+                            <span class="leader-role">Vocational Training Head</span>
+                            <p class="leader-quote">
+                                "Hands-on skills training creates sustainable livelihoods."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Officer -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/burwaye.jpeg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Mr. Bashir Salisu</h4>
+                            <span class="leader-role">Account Officer</span>
+                            <p class="leader-quote">
+                                "Financial transparency builds trust and sustainability."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Officer / Cashier -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/coach.jpeg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Mr. Abdul-rahman Sarkin-Kaya</h4>
+                            <span class="leader-role">Account Officer / Cashier</span>
+                            <p class="leader-quote">
+                                "Accuracy and accountability safeguard our mission."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monitoring & Evaluation -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/sagir.jpeg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Mr. Sagir Muhammad Labaran</h4>
+                            <span class="leader-role">Monitoring & Evaluation Officer</span>
+                            <p class="leader-quote">
+                                "Data helps us improve, adapt, and achieve lasting impact."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partnerships -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/abba.jpeg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Mr. Ibrahim Muhammad Madugu</h4>
+                            <span class="leader-role">Partnerships & Donor Relations Coordinator</span>
+                            <p class="leader-quote">
+                                "Strategic partnerships multiply our impact."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Engagement -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/coach.jpg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Ms. Hassana Ahmad</h4>
+                            <span class="leader-role">Community Engagement & Partnership Officer</span>
+                            <p class="leader-quote">
+                                "Listening to communities is the foundation of sustainable change."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Women Empowerment -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/maryam.jpeg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Ms. Maryam Sale</h4>
+                            <span class="leader-role">Women's Empowerment Lead</span>
+                            <p class="leader-quote">
+                                "When women thrive, communities prosper."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Youth Empowerment -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/sulaiman.jpeg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Mr. Sulaiman Ibrahim</h4>
+                            <span class="leader-role">Youth Empowerment Officer</span>
+                            <p class="leader-quote">
+                                "Youth skills today shape tomorrow’s leaders."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin & HR -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/coach.jpg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Mr. Murtala Aliyu</h4>
+                            <span class="leader-role">Administration & Human Resources Officer</span>
+                            <p class="leader-quote">
+                                "Strong institutions are built on strong people."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Collection -->
+                <div class="col-md-4">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <img src="images/coach.jpg" class="leader-profile" alt="">
+                        </div>
+                        <div class="leader-content">
+                            <h4>Mr. Ibrahim Muhammad Aliyu</h4>
+                            <span class="leader-role">Data Collection & Reporting Assistant</span>
+                            <p class="leader-quote">
+                                "Reliable data tells the true story of impact."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- VIEW ALL BUTTON -->
+        <div class="text-center mt-4">
+            <button class="btn btn-view-all" id="viewAllLeadersBtn">
+                <i class="fas fa-users me-2"></i> View All Leaders
+            </button>
+        </div>
+
+    </div>
+</section>
+
+
+
+    <!-- Board of Trustees Section -->
+<section id="trustees" class="trustees-section">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2 class="animate-on-scroll">Board of Trustees</h2>
+            <div class="section-subtitle animate-on-scroll" style="transition-delay: 0.2s">
+                Distinguished Leaders Guiding Our Vision
+            </div>
+        </div>
+
+        <!-- First 6 Trustees -->
+        <div class="row g-4">
+            <!-- Trustee 1 -->
+            <div class="col-md-4">
+                <div class="trustee-card animate-on-scroll">
+                    <div class="trustee-img">
+                        <img src="images/coach.jpeg" alt="Dr. Ahmad Abubakar Maradun" class="trustee-profile">
+                    </div>
+                    <div class="trustee-content">
+                        <h4>Dr. Ahmad Abubakar Maradun</h4>
+                        <span class="trustee-role">Chairperson</span>
+                        <span class="trustee-organization">Former Commissioner of Education</span>
+                        <p class="trustee-bio">
+                            With over 30 years in educational policy and development, Dr. Maradun provides strategic oversight.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trustee 2 -->
+            <div class="col-md-4">
+                <div class="trustee-card animate-on-scroll">
+                    <div class="trustee-img">
+                        <img src="images/coach.jpeg" alt="Alh. Aliyu Maikiyo" class="trustee-profile">
+                    </div>
+                    <div class="trustee-content">
+                        <h4>Alh. Aliyu Maikiyo</h4>
+                        <span class="trustee-role">Secretary</span>
+                        <p class="trustee-bio">
+                            A renowned entrepreneur and philanthropist with deep commitment to sustainable development.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trustee 3 -->
+            <div class="col-md-4">
+                <div class="trustee-card animate-on-scroll">
+                    <div class="trustee-img">
+                        <img src="images/coach.jpeg" alt="Alh. Bala Sarkin Arewa" class="trustee-profile">
+                    </div>
+                    <div class="trustee-content">
+                        <h4>Alh. Bala Sarkin Arewa</h4>
+                        <span class="trustee-role">District Head</span>
+                        <p class="trustee-bio">
+                            Ensures operations adhere to the highest standards of transparency and accountability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trustee 4 -->
+            <div class="col-md-4">
+                <div class="trustee-card animate-on-scroll">
+                    <div class="trustee-img">
+                        <img src="images/coach.jpeg" alt="Alh. Shehu Abubakar" class="trustee-profile">
+                    </div>
+                    <div class="trustee-content">
+                        <h4>Alh. Shehu Abubakar</h4>
+                        <span class="trustee-role">Trustee</span>
+                        <p class="trustee-bio">
+                            Provides guidance on cultural integration and community engagement strategies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trustee 5 -->
+            <div class="col-md-4">
+                <div class="trustee-card animate-on-scroll">
+                    <div class="trustee-img">
+                        <img src="images/coach.jpeg" alt="Mal. Abdullahi Mainasara" class="trustee-profile">
+                    </div>
+                    <div class="trustee-content">
+                        <h4>Mal. Abdullahi Mainasara</h4>
+                        <span class="trustee-role">Trustee</span>
+                        <p class="trustee-bio">
+                            Guides financial strategy and sustainable resource mobilization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trustee 6 -->
+            <div class="col-md-4">
+                <div class="trustee-card animate-on-scroll">
+                    <div class="trustee-img">
+                        <img src="images/coach.jpeg" alt="Alh. Mansur Maccido" class="trustee-profile">
+                    </div>
+                    <div class="trustee-content">
+                        <h4>Alh. Mansur Maccido</h4>
+                        <span class="trustee-role">Trustee</span>
+                        <p class="trustee-bio">
+                            Brings insights on market linkages and sustainable business models.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- More Trustees (Hidden Initially) -->
+        <div class="more-trustees mt-4" id="moreTrustees">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="trustee-card animate-on-scroll">
+                        <img src="images/coach.jpeg" class="trustee-profile" alt="">
+                        <h4>Mustapha Sarkin Kaya</h4>
+                        <span class="trustee-role">Trustee</span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="trustee-card animate-on-scroll">
+                        <img src="images/coach.jpeg" class="trustee-profile" alt="">
+                        <h4>Mal. Abubakar Abdullahi</h4>
+                        <span class="trustee-role">Trustee</span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="trustee-card animate-on-scroll">
+                        <img src="images/coach.jpeg" class="trustee-profile" alt="">
+                        <h4>Haj. Rukayya Sardauna</h4>
+                        <span class="trustee-role">Trustee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center mt-4">
+            <button class="btn btn-view-all" id="viewAllTrusteesBtn">
+                <i class="fas fa-user-tie me-2"></i> View All Trustees
+            </button>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="animate-on-scroll">Our Gallery</h2>
+                <div class="section-subtitle animate-on-scroll" style="transition-delay: 0.2s">Capturing Moments of Impact</div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Gallery Item 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="images/ict.jpeg" alt="ICT Training Session" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">ICT Training Session</h4>
+                            <p class="gallery-description">Students learning computer fundamentals and digital skills in our modern computer lab</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item animate-on-scroll" style="transition-delay: 0.1s">
+                        <img src="images/shoes.jpeg" alt="Shoes Making Workshop" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">Shoes Making Workshop</h4>
+                            <p class="gallery-description">Artisans crafting high-quality footwear using traditional and modern techniques</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item animate-on-scroll" style="transition-delay: 0.2s">
+                        <img src="images/chairs.jpeg" alt="Leatherwork Training" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">Leatherwork Training</h4>
+                            <p class="gallery-description">Students mastering the art of bag making and leather craftsmanship</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item animate-on-scroll" style="transition-delay: 0.3s">
+                        <img src="images/graduation.jpeg" alt="Graduation Ceremony" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">Graduation Ceremony</h4>
+                            <p class="gallery-description">Celebrating the achievements of our graduates with certificates and awards</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item animate-on-scroll" style="transition-delay: 0.4s">
+                        <img src="images/group.jpeg" alt="Community Outreach" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">Community Outreach</h4>
+                            <p class="gallery-description">Engaging with local communities to understand their needs and provide support</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item animate-on-scroll" style="transition-delay: 0.5s">
+                        <img src="images/keyboard.jpeg" alt="Product Exhibition" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">Product Exhibition</h4>
+                            <p class="gallery-description">Showcasing the high-quality products created by our trained artisans</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery View All Button -->
+            <div class="view-all-container">
+                <button class="btn btn-view-all" id="viewGalleryBtn">
+                    <i class="fas fa-images me-2"></i>View More Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="animate-on-scroll">Get In Touch</h2>
+                <div class="section-subtitle animate-on-scroll" style="transition-delay: 0.2s">We'd Love to Hear From You</div>
+            </div>
+            
+            <div class="contact-buttons">
+                <button class="btn btn-primary btn-lg px-5 py-3 me-3" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    <i class="fas fa-envelope me-2"></i>Send Us Message
+                </button>
+                <button class="btn btn-accent btn-lg px-5 py-3" id="contactDonateBtn">
+                    <i class="fas fa-heart me-2"></i>Support Our Mission
+                </button>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-map-marker-alt fa-3x" style="color: var(--primary-green); margin-bottom: 1rem;"></i>
+                    <h5>Our Location</h5>
+                    <p class="text-muted">Workshop Centre, Bye-Pass<br>Zamfara State, Nigeria</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-phone fa-3x" style="color: var(--primary-green); margin-bottom: 1rem;"></i>
+                    <h5>Phone Number</h5>
+                    <p class="text-muted">+23481 4974 8730<br>Mon-Fri: 9:00 AM - 5:00 PM</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-envelope fa-3x" style="color: var(--primary-green); margin-bottom: 1rem;"></i>
+                    <h5>Email Address</h5>
+                    <p class="text-muted">info@nagartayouth.org<br>support@nagartayouth.org</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-envelope me-2"></i>Send Message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Name" required>
+                                    <label for="name"><i class="fas fa-user me-2"></i>Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                    <label for="email"><i class="fas fa-envelope me-2"></i>Email Address</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="subject"><i class="fas fa-tag me-2"></i>Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="message" placeholder="Message" style="height: 150px" required></textarea>
+                                    <label for="message"><i class="fas fa-comment me-2"></i>Your Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 py-3">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donation Modal -->
+    <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-heart me-2"></i>Support Our Mission</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="lead text-center mb-4">Your generous support enables us to continue transforming lives through skills development and economic empowerment.</p>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-4 h-100">
+                                <h5 class="text-primary-green"><i class="fas fa-money-bill-wave me-2"></i>Financial Donation</h5>
+                                <p class="text-muted mb-3">Make a financial contribution to support our programs and scholarship funds.</p>
+                                <div class="bg-light p-3 rounded-3">
+                                    <h6 class="text-primary-green"><i class="fas fa-university me-2"></i>Bank Details</h6>
+                                    <div class="mt-2">
+                                        <p class="mb-1"><strong>Bank:</strong> Global Trust Bank</p>
+                                        <p class="mb-1"><strong>Account:</strong> 0123456789</p>
+                                        <p class="mb-0"><strong>SWIFT:</strong> GTBIUS33</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 border rounded-4 h-100">
+                                <h5 class="text-primary-green"><i class="fas fa-box-open me-2"></i>Material Donations</h5>
+                                <p class="text-muted mb-3">Donate materials and equipment to support our training programs.</p>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Computers and IT equipment</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Leather and fabric materials</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Shoe-making tools</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Educational materials</li>
+                                </ul>
+                                <p class="text-center mt-3">
+                                    <strong>Email:</strong> donations@nagartayouth.org<br>
+                                    <strong>Phone:</strong> +23481 4974 8730
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">Nagarta<span>Youth</span></div>
+                    <p class="footer-about">Empowering Communities Through Skills Development since 2012. We believe in creating sustainable change through education, innovation, and community partnership.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <div class="footer-links">
+                        <a href="#story"><i class="fas fa-info-circle"></i> Our Story</a>
+                        <a href="#mission"><i class="fas fa-bullseye"></i> Mission & Vision</a>
+                        <a href="#programmes"><i class="fas fa-graduation-cap"></i> Programmes</a>
+                        <a href="#leadership"><i class="fas fa-users"></i> Leadership</a>
+                        <a href="#trustees"><i class="fas fa-user-tie"></i> Trustees</a>
+                        <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
+                        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h6 class="footer-heading">Our Programmes</h6>
+                    <div class="footer-links">
+                        <a href="#"><i class="fas fa-laptop-code"></i> Digital Skills & ICT</a>
+                        <a href="#"><i class="fas fa-shoe-prints"></i> Shoes Making & Design</a>
+                        <a href="#"><i class="fas fa-briefcase"></i> Bag Making & Leatherwork</a>
+                        <a href="#"><i class="fas fa-lightbulb"></i> Entrepreneurship Training</a>
+                        <a href="#"><i class="fas fa-female"></i> Women's Empowerment</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h6 class="footer-heading">Contact Us</h6>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Workshop Centre,<br>Bye-Pass, Zamfara</p>
+                        <p><i class="fas fa-phone"></i> +23481 4974 8730</p>
+                        <p><i class="fas fa-envelope"></i> info@nagartayouth.org</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> NagartaYouth Community Development Initiatives. All rights reserved. | Registered Non-Profit 501(c)(3)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="btn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // View All Leaders Functionality
+        document.getElementById('viewAllLeadersBtn').addEventListener('click', function() {
+            const moreLeaders = document.getElementById('moreLeaders');
+            const button = this;
+            
+            if (moreLeaders.classList.contains('show')) {
+                moreLeaders.classList.remove('show');
+                button.innerHTML = '<i class="fas fa-users me-2"></i>View All Leaders';
+                
+                // Smooth scroll to the top of the leaders section
+                document.getElementById('leadership').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                moreLeaders.classList.add('show');
+                button.innerHTML = '<i class="fas fa-eye-slash me-2"></i>Show Less Leaders';
+                
+                // Trigger animations for newly visible cards
+                setTimeout(() => {
+                    const visibleCards = document.querySelectorAll('#moreLeaders .animate-on-scroll');
+                    visibleCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 100);
+                    });
+                }, 50);
+            }
+        });
+        
+        // View All Trustees Functionality
+        document.getElementById('viewAllTrusteesBtn').addEventListener('click', function() {
+            const moreTrustees = document.getElementById('moreTrustees');
+            const button = this;
+            
+            if (moreTrustees.classList.contains('show')) {
+                moreTrustees.classList.remove('show');
+                button.innerHTML = '<i class="fas fa-user-tie me-2"></i>View All Trustees';
+                
+                // Smooth scroll to the top of the trustees section
+                document.getElementById('trustees').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                moreTrustees.classList.add('show');
+                button.innerHTML = '<i class="fas fa-eye-slash me-2"></i>Show Less Trustees';
+                
+                // Trigger animations for newly visible cards
+                setTimeout(() => {
+                    const visibleCards = document.querySelectorAll('#moreTrustees .animate-on-scroll');
+                    visibleCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 100);
+                    });
+                }, 50);
+            }
+        });
+        
+        // Gallery Button Functionality
+        document.getElementById('viewGalleryBtn').addEventListener('click', function() {
+            alert('More photos will be displayed here. You can add additional gallery items or implement a lightbox feature.');
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        };
+        
+        backToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+            observer.observe(element);
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if(window.scrollY > 50) {
+                nav.classList.add('navbar-scrolled');
+            } else {
+                nav.classList.remove('navbar-scrolled');
+            }
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Donation Modal
+        const donationModal = new bootstrap.Modal(document.getElementById('donationModal'));
+        const donateBtn = document.getElementById('donateBtn');
+        const heroDonateBtn = document.getElementById('heroDonateBtn');
+        const contactDonateBtn = document.getElementById('contactDonateBtn');
+        
+        if(donateBtn) {
+            donateBtn.addEventListener('click', () => {
+                donationModal.show();
+            });
+        }
+        
+        if(heroDonateBtn) {
+            heroDonateBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                donationModal.show();
+            });
+        }
+        
+        if(contactDonateBtn) {
+            contactDonateBtn.addEventListener('click', () => {
+                donationModal.show();
+            });
+        }
+        
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Show success message
+                alert('Thank you! Your message has been sent successfully.');
+                
+                this.reset();
+                
+                // Close modal
+                const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+                if(modal) modal.hide();
+            }, 2000);
+        });
+        
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
+    <script>
+document.getElementById("viewAllLeadersBtn").addEventListener("click", function () {
+    const moreLeaders = document.getElementById("moreLeaders");
+
+    if (moreLeaders.style.display === "none" || moreLeaders.style.display === "") {
+        moreLeaders.style.display = "block";
+        this.innerHTML = '<i class="fas fa-eye-slash me-2"></i> Hide Leaders';
+    } else {
+        moreLeaders.style.display = "none";
+        this.innerHTML = '<i class="fas fa-users me-2"></i> View All Leaders';
+    }
+});
+</script>
+
+</body>
+</html>
